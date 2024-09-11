@@ -6,7 +6,7 @@ This project creates a pdf Chat Bot using Google's Gemini model. The bot can ans
 
 - Upload a pdf file and ask questions about its content.
 - Uses Google's Gemini model for natural language processing.
-- Simple web interface built with Gradio.
+- Simple web interface built with Streamlit.
 
 1. **Install the required packages:**
 
