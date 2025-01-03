@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet and Workouts Recommendations</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #00aaff;
+            margin-top: 20px;
+            animation: glow 2s infinite;
+        }
+        h3 {
+            color: #007acc;
+            margin-top: 20px;
+            border-bottom: 2px solid #00aaff;
+            padding-bottom: 5px;
+            animation: fadeInDown 1.5s;
+        }
+        .container {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(0, 174, 255, 0.8);
+            margin-bottom: 30px;
+            animation: slideInUp 1.5s;
+        }
+        p {
+            font-size: 1.1rem;
+            margin: 5px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        .glow-text {
+            font-size: 1.2rem;
+            background: linear-gradient(90deg, #ff007f, #00d4ff, #7fff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text; /* For compatibility */
+            animation: glow-color 3s infinite;
+        }
+        footer {
+            text-align: center;
+            color: #00aaff;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #0d0d0d;
+            animation: fadeInUp 1.5s;
+        }
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #007acc, 0 0 30px #007acc;
+            }
+            50% {
+                text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 40px #007acc, 0 0 50px #007acc;
+            }
+            100% {
+                text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #007acc, 0 0 30px #007acc;
+            }
+        }
+        @keyframes glow-color {
+            0% {
+                background-position: 0%;
+            }
+            50% {
+                background-position: 100%;
+            }
+            100% {
+                background-position: 0%;
+            }
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #00aaff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="animate__animated animate__bounce">Diet and Workouts Recommendations</h1>
+
+    <div class="container mt-5">
+        <h3 class="animate__animated animate__fadeInDown">Restaurants in India:</h3>
+        {% for i in restaurant_names %}
+        <p class="glow-text animate__animated animate__fadeIn animate__delay-1s">
+            {{i}}
+        </p>
+        {% endfor %}
+
+        <h3 class="animate__animated animate__fadeInDown">Breakfast:</h3>
+        {% for i in breakfast_names %}
+        <p class="glow-text animate__animated animate__fadeIn animate__delay-2s">
+            {{i}}
+        </p>
+        {% endfor %}
+
+        <h3 class="animate__animated animate__fadeInDown">Dinners:</h3>
+        {% for i in dinner_names %}
+        <p class="glow-text animate__animated animate__fadeIn animate__delay-3s">
+            {{i}}
+        </p>
+        {% endfor %}
+
+        <h3 class="animate__animated animate__fadeInDown">Workout Plans:</h3>
+        {% for i in workout_names %}
+        <p class="glow-text animate__animated animate__fadeIn animate__delay-4s">
+            {{i}}
+        </p>
+        {% endfor %}
+    </div>
+
+    <footer class="animate__animated animate__fadeInUp">
+        &copy; 2025 Diet and Workouts Recommendations. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
