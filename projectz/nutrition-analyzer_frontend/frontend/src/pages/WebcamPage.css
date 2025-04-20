@@ -1,0 +1,451 @@
+/* WebcamPage.css - Modern styling for Food Nutrition Analyzer Webcam Interface */
+
+:root {
+    --primary: #4CAF50;
+    --primary-light: #80e27e;
+    --primary-dark: #087f23;
+    --secondary: #ff6b6b;
+    --tertiary: #5c6bc0;
+    --light: #f9f9f9;
+    --dark: #333;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .webcam-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .page-title {
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
+    background: linear-gradient(45deg, var(--tertiary), var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    animation: pulseText 2s infinite alternate;
+  }
+  
+  .camera-container {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 12px !important;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+    background: radial-gradient(circle, #1a1a1a 0%, #121212 100%);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .camera-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05) 10px,
+      rgba(0, 0, 0, 0.1) 10px,
+      rgba(0, 0, 0, 0.1) 20px
+    );
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  
+  .webcam-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transform: scale(1.01); /* Slightly larger to hide border radius edges */
+  }
+  
+  .webcam-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+  }
+  
+  .webcam-overlay::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-sizing: border-box;
+    animation: pulse 2s infinite;
+  }
+  
+  .camera-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+  }
+  
+  .status-indicator.active {
+    background-color: var(--primary);
+    animation: blink 1.5s infinite;
+  }
+  
+  .controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+    width: 100%;
+  }
+  
+  .control-button {
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 50px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: none !important;
+    box-shadow: var(--shadow) !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+    min-width: 130px !important;
+  }
+  
+  .start-button {
+    background-color: var(--primary) !important;
+    color: white !important;
+  }
+  
+  .stop-button {
+    background-color: var(--secondary) !important;
+    color: white !important;
+  }
+  
+  .capture-button {
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary)) !important;
+    color: white !important;
+    font-weight: 600 !important;
+  }
+  
+  .analyze-button {
+    background: linear-gradient(45deg, var(--tertiary), #3f51b5) !important;
+    color: white !important;
+  }
+  
+  .retake-button {
+    background-color: white !important;
+    color: var(--dark) !important;
+    border: 1px solid #ccc !important;
+  }
+  
+  .control-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .control-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    opacity: 0;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+  
+  .control-button:hover::after {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .capture-button::before {
+    content: '📸';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+  }
+  
+  .preview-container {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    animation: scaleIn 0.4s ease-out;
+  }
+  
+  .preview-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+  
+  /* Animation for "Analyzing..." text */
+  @keyframes ellipsis {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+    100% { content: '.'; }
+  }
+  
+  .analyzing-text::after {
+    content: '.';
+    animation: ellipsis 1.5s infinite;
+  }
+  
+  /* Loading spinner animation */
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(76, 175, 80, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s infinite linear;
+  }
+  
+  /* Results styling */
+  .nutrition-container {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: white;
+    box-shadow: var(--shadow);
+    margin-top: 1rem;
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  .results-title {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    color: var(--primary-dark) !important;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .results-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    border-radius: 3px;
+  }
+  
+  .results-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1rem;
+  }
+  
+  .results-table th {
+    background-color: rgba(76, 175, 80, 0.1) !important;
+    color: var(--primary-dark) !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+    padding: 12px 16px !important;
+  }
+  
+  .results-table th:first-child {
+    border-top-left-radius: 8px;
+  }
+  
+  .results-table th:last-child {
+    border-top-right-radius: 8px;
+  }
+  
+  .results-table td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .results-table tr:last-child td {
+    border-bottom: none !important;
+  }
+  
+  .results-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  
+  .food-item-row {
+    transition: all 0.2s ease;
+  }
+  
+  .food-item-row:hover {
+    background-color: rgba(76, 175, 80, 0.05) !important;
+  }
+  
+  .total-calories {
+    margin-top: 1.5rem !important;
+    padding: 1rem !important;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+    font-weight: 600 !important;
+    color: var(--primary-dark) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .total-calories-value {
+    font-size: 1.2rem !important;
+    color: var(--primary) !important;
+  }
+  
+  .error-message {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #d32f2f;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  }
+  
+  .error-message::before {
+    content: '⚠️';
+    font-size: 1.2rem;
+  }
+  
+  .no-results {
+    padding: 2rem;
+    text-align: center;
+    color: #757575;
+    font-style: italic;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+  }
+  
+  @keyframes shake {
+    10%, 90% { transform: translateX(-1px); }
+    20%, 80% { transform: translateX(2px); }
+    30%, 50%, 70% { transform: translateX(-3px); }
+    40%, 60% { transform: translateX(3px); }
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  @keyframes pulseText {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .webcam-container {
+      padding: 1rem;
+    }
+    
+    .camera-container {
+      aspect-ratio: 1/1;
+    }
+    
+    .controls-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .control-button {
+      width: 100%;
+      max-width: 250px;
+    }
+    
+    .results-table {
+      font-size: 0.85rem;
+    }
+    
+    .results-table th,
+    .results-table td {
+      padding: 8px 12px !important;
+    }
+  }

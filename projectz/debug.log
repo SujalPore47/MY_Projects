@@ -1,0 +1,88 @@
+2025-04-16 18:07:46,746 - INFO - Initializing Gemini model...
+2025-04-16 18:07:46,747 - INFO - Gemini model initialized successfully
+2025-04-16 18:15:02,397 - DEBUG - Calling on_part_begin with no data
+2025-04-16 18:15:02,398 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 18:15:02,398 - DEBUG - Calling on_header_value with data[63:117]
+2025-04-16 18:15:02,399 - DEBUG - Calling on_header_end with no data
+2025-04-16 18:15:02,399 - DEBUG - Calling on_header_field with data[119:131]
+2025-04-16 18:15:02,399 - DEBUG - Calling on_header_value with data[133:143]
+2025-04-16 18:15:02,400 - DEBUG - Calling on_header_end with no data
+2025-04-16 18:15:02,400 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 18:15:02,402 - DEBUG - Calling on_part_data with data[147:81920]
+2025-04-16 18:15:02,402 - DEBUG - Calling on_part_data with data[0:21555]
+2025-04-16 18:15:02,403 - DEBUG - Calling on_part_end with no data
+2025-04-16 18:15:02,403 - DEBUG - Calling on_end with no data
+2025-04-16 18:15:02,405 - DEBUG - Received file: captured_image.jpg
+2025-04-16 18:15:02,934 - DEBUG - Importing BlpImagePlugin
+2025-04-16 18:15:02,939 - DEBUG - Importing BmpImagePlugin
+2025-04-16 18:15:02,939 - DEBUG - Importing BufrStubImagePlugin
+2025-04-16 18:15:02,953 - DEBUG - Importing CurImagePlugin
+2025-04-16 18:15:02,968 - DEBUG - Importing DcxImagePlugin
+2025-04-16 18:15:02,976 - DEBUG - Importing DdsImagePlugin
+2025-04-16 18:15:02,990 - DEBUG - Importing EpsImagePlugin
+2025-04-16 18:15:02,993 - DEBUG - Importing FitsImagePlugin
+2025-04-16 18:15:02,997 - DEBUG - Importing FliImagePlugin
+2025-04-16 18:15:03,000 - DEBUG - Importing FpxImagePlugin
+2025-04-16 18:15:03,006 - DEBUG - Image: failed to import FpxImagePlugin: No module named 'olefile'
+2025-04-16 18:15:03,007 - DEBUG - Importing FtexImagePlugin
+2025-04-16 18:15:03,010 - DEBUG - Importing GbrImagePlugin
+2025-04-16 18:15:03,013 - DEBUG - Importing GifImagePlugin
+2025-04-16 18:15:03,014 - DEBUG - Importing GribStubImagePlugin
+2025-04-16 18:15:03,016 - DEBUG - Importing Hdf5StubImagePlugin
+2025-04-16 18:15:03,019 - DEBUG - Importing IcnsImagePlugin
+2025-04-16 18:15:03,040 - DEBUG - Importing IcoImagePlugin
+2025-04-16 18:15:03,043 - DEBUG - Importing ImImagePlugin
+2025-04-16 18:15:03,048 - DEBUG - Importing ImtImagePlugin
+2025-04-16 18:15:03,052 - DEBUG - Importing IptcImagePlugin
+2025-04-16 18:15:03,057 - DEBUG - Importing JpegImagePlugin
+2025-04-16 18:15:03,058 - DEBUG - Importing Jpeg2KImagePlugin
+2025-04-16 18:15:03,059 - DEBUG - Importing McIdasImagePlugin
+2025-04-16 18:15:03,062 - DEBUG - Importing MicImagePlugin
+2025-04-16 18:15:03,068 - DEBUG - Image: failed to import MicImagePlugin: No module named 'olefile'
+2025-04-16 18:15:03,069 - DEBUG - Importing MpegImagePlugin
+2025-04-16 18:15:03,073 - DEBUG - Importing MpoImagePlugin
+2025-04-16 18:15:03,096 - DEBUG - Importing MspImagePlugin
+2025-04-16 18:15:03,099 - DEBUG - Importing PalmImagePlugin
+2025-04-16 18:15:03,125 - DEBUG - Importing PcdImagePlugin
+2025-04-16 18:15:03,128 - DEBUG - Importing PcxImagePlugin
+2025-04-16 18:15:03,129 - DEBUG - Importing PdfImagePlugin
+2025-04-16 18:15:03,149 - DEBUG - Importing PixarImagePlugin
+2025-04-16 18:15:03,152 - DEBUG - Importing PngImagePlugin
+2025-04-16 18:15:03,153 - DEBUG - Importing PpmImagePlugin
+2025-04-16 18:15:03,154 - DEBUG - Importing PsdImagePlugin
+2025-04-16 18:15:03,157 - DEBUG - Importing QoiImagePlugin
+2025-04-16 18:15:03,162 - DEBUG - Importing SgiImagePlugin
+2025-04-16 18:15:03,166 - DEBUG - Importing SpiderImagePlugin
+2025-04-16 18:15:03,173 - DEBUG - Importing SunImagePlugin
+2025-04-16 18:15:03,176 - DEBUG - Importing TgaImagePlugin
+2025-04-16 18:15:03,181 - DEBUG - Importing TiffImagePlugin
+2025-04-16 18:15:03,182 - DEBUG - Importing WebPImagePlugin
+2025-04-16 18:15:03,244 - DEBUG - Importing WmfImagePlugin
+2025-04-16 18:15:03,247 - DEBUG - Importing XbmImagePlugin
+2025-04-16 18:15:03,250 - DEBUG - Importing XpmImagePlugin
+2025-04-16 18:15:03,254 - DEBUG - Importing XVThumbImagePlugin
+2025-04-16 18:15:03,259 - DEBUG - Image successfully opened
+2025-04-16 18:15:03,260 - DEBUG - Sending request to Gemini...
+2025-04-16 18:15:08,376 - DEBUG - Received response: ```json
+{
+  "food_items": [
+    {
+      "name": "Salmon",
+      "portion_g": 150,
+      "calories": ...
+2025-04-16 18:22:40,141 - DEBUG - Received query: 'hi', chat_history: ''
+2025-04-16 18:22:40,142 - DEBUG - Sending request to Gemini...
+2025-04-16 18:22:41,464 - DEBUG - Received raw response: ```json
+{"response": "Hi there! How can I help you today?"}
+```
+...
+2025-04-16 18:22:47,314 - DEBUG - Received query: 'i want to make a cake', chat_history: 'User: hi\nBot: Hi there! How can I help you today?'
+2025-04-16 18:22:47,315 - DEBUG - Sending request to Gemini...
+2025-04-16 18:22:48,295 - DEBUG - Received raw response: ```json
+{
+  "response": "Sure! To help me suggest the perfect cake recipe, could you tell me what ki...
+2025-04-16 18:22:51,573 - DEBUG - Received query: 'choclate', chat_history: "User: hi\nBot: Hi there! How can I help you today?\n\nUser: i want to make a cake\nBot: Sure! To help me suggest the perfect cake recipe, could you tell me what kind of cake you'd like to make (e.g., chocolate, vanilla, carrot)?  Also, do you have any dietary restrictions or preferences (like gluten-free or vegan)?"
+2025-04-16 18:22:51,574 - DEBUG - Sending request to Gemini...
+2025-04-16 18:22:55,449 - DEBUG - Received raw response: ```json
+{
+  "response": "Okay, based on your previous message, you want to make a cake and mentioned...
